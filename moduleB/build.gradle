@@ -1,4 +1,4 @@
-def isDebug = false
+def isDebug = true
 if (isDebug.toBoolean()) {
   apply plugin: 'com.android.application'
 } else {

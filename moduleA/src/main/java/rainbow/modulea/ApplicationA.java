@@ -15,9 +15,7 @@ public class ApplicationA extends Application {
     super.onCreate();
     //给底层library设置context
     AppContext.init(getApplicationContext());
-    if (BuildConfig.IS_DEBUG_WITH_B) {
-      //ApplicationB.onCreateAsLibrary();
-    }
+    //ApplicationB.onCreateAsLibrary();
   }
 
   /**

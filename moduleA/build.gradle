@@ -1,6 +1,5 @@
 def isDebug = false
-def isDebugWithB = false
-if (isDebug.toBoolean() || isDebugWithB) {
+if (isDebug.toBoolean()) {
   apply plugin: 'com.android.application'
 } else {
   apply plugin: 'com.android.library'
@@ -18,12 +17,6 @@ android {
     versionName "1.0"
 
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-    if (isDebugWithB.toBoolean()) {
-      buildConfigField "boolean", "IS_DEBUG_WITH_B", "true"
-    } else {
-      buildConfigField "boolean", "IS_DEBUG_WITH_B", "false"
-    }
   }
   buildTypes {
     release {
@@ -34,7 +27,7 @@ android {
 
   sourceSets {
     main {
-      if (isDebug.toBoolean() || isDebugWithB.toBoolean()) {
+      if (isDebug.toBoolean()) {
         manifest.srcFile 'src/main/debug/AndroidManifest.xml'
       } else {
         manifest.srcFile 'src/main/AndroidManifest.xml'
@@ -53,9 +46,7 @@ dependencies {
   testCompile 'junit:junit:4.12'
   compile project(':commonlibrary')
 
-  if (isDebugWithB.toBoolean()) {
-    compile project(':moduleB')
-  }
+  //compile project(':moduleB')
 
   compile lib_picasso
 }
