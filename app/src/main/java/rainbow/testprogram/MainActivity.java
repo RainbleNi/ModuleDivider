@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import rainbow.commonlibrary.router.ModuleARounter;
-import rainbow.commonlibrary.router.RounterBus;
 import rainbow.commonlibrary.model.Phones;
+import rainbow.commonlibrary.router.RounterBus;
+import rainbow.commonlibrary.router.RouterA;
 import rainbow.moduleb.ActivityB;
 
 public class MainActivity extends Activity {
@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.button_a).setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 //startActivity(new Intent(MainActivity.this, ActivityA.class));
-                Intent intent = RounterBus.getRounter(MainActivity.this, ModuleARounter.class).getIntentActivityA("heihei", 23, new Phones());
+                Intent intent = RounterBus.getRounter(RouterA.class).getIntentActivityA("heihei", 23, new Phones());
                 if (intent != null) {
                     MainActivity.this.startActivity(intent);
                 }

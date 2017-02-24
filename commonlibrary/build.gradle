@@ -1,12 +1,13 @@
+def isDebug = true
 apply plugin: 'com.android.library'
 
 android {
-  compileSdkVersion android_compileSdkVersion as int
-  buildToolsVersion android_buildToolsVersion
+  compileSdkVersion rootProject.android_compileSdkVersion
+  buildToolsVersion rootProject.android_buildToolsVersion
 
   defaultConfig {
-    minSdkVersion android_minSdkVersion as int
-    targetSdkVersion android_targetSdkVersion as int
+    minSdkVersion rootProject.android_minSdkVersion
+    targetSdkVersion rootProject.android_targetSdkVersion
     versionCode 1
     versionName "1.0"
 

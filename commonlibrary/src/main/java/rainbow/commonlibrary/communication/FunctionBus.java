@@ -10,9 +10,15 @@ import rainbow.commonlibrary.AppContext;
  */
 
 public class FunctionBus {
+  /**
+   * 方法总线，缓存的map
+   */
   public static Map<Class, Object> sFunctionClassMap = new HashMap<>();
 
-
+  /**
+   * 设置方法接口的实现
+   * @param o
+   */
   public static void setFunction(Object o) {
     Class[] interfaces = o.getClass().getInterfaces();
     for (Class c : interfaces) {
@@ -23,6 +29,12 @@ public class FunctionBus {
     }
   }
 
+  /**
+   * 获取方法的实现类
+   * @param c
+   * @param <T>
+   * @return
+   */
   public static<T> T getFunction(Class<T> c) {
     T f = (T) sFunctionClassMap.get(c);
     if (f == null) {

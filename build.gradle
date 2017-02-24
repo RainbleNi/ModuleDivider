@@ -21,3 +21,15 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    android_compileSdkVersion = 25
+    android_buildToolsVersion = '25.0.2'
+    android_minSdkVersion = 21
+    android_targetSdkVersion = 25
+
+    lib_appcompat = 'com.android.support:appcompat-v7:25.1.1'
+    lib_picasso = 'com.squareup.picasso:picasso:2.5.2'
+    lib_gson = 'com.google.code.gson:gson:2.6.1'
+
+}

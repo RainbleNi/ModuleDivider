@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 import rainbow.commonlibrary.communication.FunctionA;
 import rainbow.commonlibrary.communication.FunctionBus;
-import rainbow.commonlibrary.router.ModuleARounter;
+import rainbow.commonlibrary.router.RouterA;
 import rainbow.commonlibrary.router.RounterBus;
 import rainbow.commonlibrary.model.Phones;
 
@@ -22,7 +22,7 @@ public class ActivityB extends Activity {
     setContentView(R.layout.b_main_layout);
     findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        Intent intent = RounterBus.getRounter(ActivityB.this, ModuleARounter.class).getIntentActivityA("xixi", 1, new Phones());
+        Intent intent = RounterBus.getRounter(RouterA.class).getIntentActivityA("xixi", 1, new Phones());
         if (intent != null) {
           startActivityForResult(intent, 0);
         }
