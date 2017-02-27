@@ -1,4 +1,4 @@
-def isDebug = true
+def isDebug = false
 apply plugin: 'com.android.library'
 
 android {

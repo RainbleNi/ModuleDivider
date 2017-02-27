@@ -1,13 +1,10 @@
 package rainbow.modulea;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import com.squareup.picasso.Picasso;
-import rainbow.commonlibrary.router.RouterB;
-import rainbow.commonlibrary.router.RounterBus;
 
 /**
  * Created by Nirui on 17/2/21.
@@ -20,10 +17,11 @@ public class ActivityA extends Activity {
     setContentView(R.layout.a_main_layout);
     findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        Intent intent = RounterBus.getRounter(RouterB.class).getIntentActivityB();
+/*        Intent intent = RounterBus.getRounter(RouterB.class).getIntentActivityB();
         if (intent != null) {
           startActivity(intent);
-        }
+        }*/
+        RounterEntry.startActivityB(ActivityA.this);
       }
     });
     ViewPager.class.getName();
